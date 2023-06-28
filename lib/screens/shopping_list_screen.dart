@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screens/checkout_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/widgets/buy_button.dart';
 import 'package:flutter_projects/widgets/shopping_product.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_projects/screens/favorites_screen.dart';
 import 'package:flutter_projects/screens/home_screen.dart';
 
 import 'favorites_screen.dart';
+import 'history_screen.dart';
 
 class ShoppingList extends StatelessWidget {
   final List<Widget> productList = [
@@ -80,7 +82,12 @@ class ShoppingList extends StatelessWidget {
           BuyButton(
               text: "Continuar con la compra",
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CheckoutScreen(),
+                  ),
+                );
               },
           ),
           SizedBox(height: 30.0),
@@ -121,7 +128,12 @@ class ShoppingList extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.history),
               onPressed: () {
-                // Perform search action
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HistoryScreen(),
+                  ),
+                );
               },
             ),
             IconButton(

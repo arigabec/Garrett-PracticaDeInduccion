@@ -3,6 +3,7 @@ import 'package:flutter_projects/screens/home_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
 
 import 'favorites_screen.dart';
+import 'history_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
@@ -115,7 +116,12 @@ class SettingsScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.history),
               onPressed: () {
-                // Perform search action
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HistoryScreen(),
+                  ),
+                );
               },
             ),
             IconButton(

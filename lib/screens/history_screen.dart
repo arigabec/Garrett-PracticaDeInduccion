@@ -1,39 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/screens/favorites_screen.dart';
-import 'package:flutter_projects/screens/history_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/screens/home_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
+import 'package:flutter_projects/widgets/history.dart';
 import '../widgets/favorite-product.dart';
-import '../widgets/store.dart';
 
-class StoreScreen extends StatelessWidget {
-
+class HistoryScreen extends StatelessWidget {
   final List<Widget> productList = [
-    Store (
-      name: "Saturnina Design",
-      image: "assets/images/saturnina.png",
-      description: "20 prendas a disposición"
+    History(
+        order: "9847",
+        price: "160 Bs",
+        description: "Polera Sopa de Mani x1"
     ),
-    Store (
-        name: "QuiroIlustra",
-        image: "assets/images/quiro.png",
-        description: "30 prendas a disposición"
-    ),
-    Store (
-        name: "Munay",
-        image: "assets/images/munay.png",
-        description: "10 prendas a disposición"
-    ),
-    Store (
-        name: "CICADA",
-        image: "assets/images/cicada.png",
-        description: "5 prendas a disposición"
-    ),
-    Store (
-        name: "Feeling TM",
-        image: "assets/images/feeling.png",
-        description: "25 prendas a disposición"
+    History(
+        order: "10647",
+        price: "180 Bs",
+        description: "Tote 02 x1"
     ),
   ];
 
@@ -42,7 +24,7 @@ class StoreScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stores'),
+        title: Text('History'),
       ),
       body: Column(
         children: [
@@ -52,7 +34,7 @@ class StoreScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(left: 30.0),
               child: Text(
-                'Empresas',
+                'Historial de pedidos',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: 24,
@@ -63,7 +45,7 @@ class StoreScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+          SizedBox(height: 30.0),
           Expanded(
             child: ListView.builder(
               itemCount: productList.length,
@@ -73,7 +55,7 @@ class StoreScreen extends StatelessWidget {
                     Container(
                         child: productList[index]
                     ),
-                    SizedBox(height: 8.0),
+                    SizedBox(height: 15.0),
                   ],
                 );
               },
@@ -110,23 +92,13 @@ class StoreScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.favorite_outline),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => FavoriteScreen(),
-                  ),
-                );
+
               },
             ),
             IconButton(
               icon: Icon(Icons.history),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HistoryScreen(),
-                  ),
-                );
+                // Perform search action
               },
             ),
             IconButton(

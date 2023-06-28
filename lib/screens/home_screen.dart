@@ -8,6 +8,7 @@ import 'package:flutter_projects/widgets/product.dart';
 import 'package:flutter/widgets.dart';
 
 import 'favorites_screen.dart';
+import 'history_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<Widget> products = [
@@ -17,6 +18,9 @@ class HomeScreen extends StatelessWidget {
       image: "assets/images/polera1.png",
       color: Colors.deepPurpleAccent.withOpacity(0.5),
       height: 190.0,
+      store: "Saturnina Design",
+      description: "Polera hecha de algodón. Con un porcentaje del 100%. "
+          "Estampado con temática boliviana, referenciando a un famoso album musical.",
     ),
     Product(
       name: "Polera Illimani",
@@ -24,6 +28,9 @@ class HomeScreen extends StatelessWidget {
       image: "assets/images/polera2.png",
       color: Colors.pinkAccent.withOpacity(0.5),
       height: 210.0,
+      store: "Saturnina Design",
+      description: "Polera hecha de algodón. Con un porcentaje del 100%. "
+          "Estampado con temática boliviana, referenciando al imponente Illimani que representa a la ciudad.",
     ),
     Product(
       name: "Chaqueta Se Ha Estido",
@@ -31,6 +38,8 @@ class HomeScreen extends StatelessWidget {
       image: "assets/images/chaqueta.png",
       color: Colors.deepOrangeAccent.withOpacity(0.5),
       height: 210.0,
+      store: "Saturnina Design",
+      description: "Chaqueta hecha con los materiales más abrigados, específicamente diseñada para el clima de nuestra ciudad.",
     ),
     Product(
       name: "Tote 02",
@@ -38,6 +47,9 @@ class HomeScreen extends StatelessWidget {
       image: "assets/images/tote.png",
       color: Colors.yellow.withOpacity(0.5),
       height: 210.0,
+      store: "CICADA",
+      description: "Tote Bag cómoda y cabedora, así siempre llegas contigo todos tus artículos necesarios. "
+          "Además, su resistible material te durará de por vida.",
     ),
   ];
 
@@ -125,7 +137,6 @@ class HomeScreen extends StatelessWidget {
                                   transform: Matrix4.rotationZ(0.1),
                                   child: Image.asset(
                                     "assets/images/polera0.png",
-                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
@@ -245,7 +256,12 @@ class HomeScreen extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.history),
                 onPressed: () {
-                  // Perform search action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HistoryScreen(),
+                    ),
+                  );
                 },
               ),
               IconButton(

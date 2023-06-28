@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../screens/product_screen.dart';
 
 class Product extends StatelessWidget {
@@ -8,6 +7,8 @@ class Product extends StatelessWidget {
   final String image;
   final Color color;
   final double height;
+  final String store;
+  final String description;
 
   Product({
     required this.name,
@@ -15,13 +16,23 @@ class Product extends StatelessWidget {
     required this.image,
     required this.color,
     required this.height,
+    required this.store,
+    required this.description,
   });
 
   void _handleContainerPressed(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => MyHomePage(),
+        builder: (context) =>
+            ProductScreen(
+              name: name,
+              price: price,
+              image: image,
+              color: color,
+              store: store,
+              description: description,
+            ),
       ),
     );
   }
@@ -56,7 +67,7 @@ class Product extends StatelessWidget {
                       Text(
                         name,
                         style: TextStyle(
-                          fontSize: 13.0,
+                          fontSize: 15.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -64,7 +75,7 @@ class Product extends StatelessWidget {
                       Text(
                         price,
                         style: TextStyle(
-                          fontSize: 12.0,
+                          fontSize: 13.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
