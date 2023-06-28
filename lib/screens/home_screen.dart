@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_projects/screens/product_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
+import 'package:flutter_projects/screens/stores_screen.dart';
 import 'package:flutter_projects/widgets/menu_options.dart';
 import 'package:flutter_projects/widgets/product.dart';
 import 'package:flutter/widgets.dart';
@@ -148,7 +149,12 @@ class HomeScreen extends StatelessWidget {
                           MenuOptions(
                             text: "EMPRESAS",
                             onPressed: () {
-                              print("Empresas");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => StoreScreen(),
+                                ),
+                              );
                             },
                             icon: Icons.business ,
                             width: 110,
