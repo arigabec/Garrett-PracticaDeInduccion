@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screens/favorites_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/screens/home_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
 import 'package:flutter_projects/widgets/history.dart';
-import '../widgets/favorite-product.dart';
 
 class HistoryScreen extends StatelessWidget {
   final List<Widget> productList = [
@@ -24,7 +24,7 @@ class HistoryScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('History'),
+        title: Text('History Screen'),
       ),
       body: Column(
         children: [
@@ -92,13 +92,23 @@ class HistoryScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.favorite_outline),
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FavoriteScreen(),
+                  ),
+                );
               },
             ),
             IconButton(
               icon: Icon(Icons.history),
               onPressed: () {
-                // Perform search action
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HistoryScreen(),
+                  ),
+                );
               },
             ),
             IconButton(

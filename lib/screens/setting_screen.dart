@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/screens/home_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
-
 import 'favorites_screen.dart';
 import 'history_screen.dart';
 
@@ -10,7 +9,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: Text('Settings Screen'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

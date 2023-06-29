@@ -28,17 +28,16 @@ class ProductScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product'),
+        title: Text('Product Screen'),
       ),
       body: Column(
         children: [
           Container(
             alignment: Alignment.center,
-            height: MediaQuery.of(context).size.height * 0.38,
+            height: MediaQuery.of(context).size.height * 0.35,
             color: color.withOpacity(0.7),
             child: Image.asset(
               image,
-              fit: BoxFit.contain,
             ),
           ),
           Expanded(

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/screens/checkout_screen.dart';
 import 'package:flutter_projects/screens/delivery_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/widgets/buy_button.dart';
 import 'package:flutter_projects/widgets/shopping_product.dart';
 import 'package:flutter_projects/screens/favorites_screen.dart';
 import 'package:flutter_projects/screens/home_screen.dart';
-
-import 'favorites_screen.dart';
 import 'history_screen.dart';
 
 class ShoppingList extends StatelessWidget {
@@ -43,7 +40,7 @@ class ShoppingList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping List'),
+        title: Text('Shopping List Screen'),
       ),
       body: Column(
         children: [
@@ -151,7 +148,12 @@ class ShoppingList extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.shopping_cart_outlined),
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ShoppingList(),
+                  ),
+                );
               },
             ),
             IconButton(

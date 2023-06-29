@@ -15,7 +15,7 @@ class CardPayment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(25.0),
         child: Column(
           children: [
             Align(
@@ -107,7 +107,7 @@ class CardPayment extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: 10.0),
             Container(
               width: 500,
               height: 120,
@@ -116,7 +116,7 @@ class CardPayment extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Center(
                     child: Row(
                       children: [
@@ -127,11 +127,11 @@ class CardPayment extends StatelessWidget {
                               "assets/images/card.png"
                           ),
                         ),
-                        SizedBox(width: 20.0),
+                        SizedBox(width: 10.0),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 8.0),
+                            SizedBox(height: 15.0),
                             Text(
                               'Número de tarjeta: $cardNumber',
                               style: TextStyle(color: Colors.white),

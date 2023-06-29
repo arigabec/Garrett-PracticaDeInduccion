@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/screens/product_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
 import 'package:flutter_projects/screens/stores_screen.dart';
 import 'package:flutter_projects/widgets/menu_options.dart';
 import 'package:flutter_projects/widgets/product.dart';
-import 'package:flutter/widgets.dart';
-
 import 'favorites_screen.dart';
 import 'history_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   final List<Widget> products = [
@@ -228,7 +226,12 @@ class HomeScreen extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.home_outlined),
                 onPressed: () {
-                  // Navigate to home screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
                 },
               ),
               IconButton(

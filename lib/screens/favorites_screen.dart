@@ -13,7 +13,9 @@ class FavoriteScreen extends StatelessWidget {
       image: "assets/images/polera1.png",
       color: Colors.deepPurpleAccent.withOpacity(0.5),
       size: "Talla S",
-      store: "Saturnina Design"
+      store: "Saturnina Design",
+      description: "Polera hecha de algodón. Con un porcentaje del 100%. "
+          "Estampado con temática boliviana, referenciando a un famoso album musical.",
     ),
     FavoriteProduct(
       name: "Tote 02",
@@ -21,7 +23,9 @@ class FavoriteScreen extends StatelessWidget {
       image: "assets/images/tote.png",
       color: Colors.yellow.withOpacity(0.5),
       size: "Talla única",
-      store: "CICADA"
+      store: "CICADA",
+      description: "Tote Bag cómoda y cabedora, así siempre llegas contigo todos tus artículos necesarios. "
+          "Además, su resistible material te durará de por vida.",
     ),
   ];
 
@@ -30,7 +34,7 @@ class FavoriteScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorites'),
+        title: Text('Favorites Screen'),
       ),
       body: Column(
         children: [
@@ -98,7 +102,12 @@ class FavoriteScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.favorite_outline),
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FavoriteScreen(),
+                  ),
+                );
               },
             ),
             IconButton(

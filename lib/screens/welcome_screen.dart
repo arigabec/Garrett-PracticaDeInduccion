@@ -20,7 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DressApp'),
+        title: Text('Welcome Screen'),
       ),
       body: Center(
         child: Column(

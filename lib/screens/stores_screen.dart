@@ -4,7 +4,6 @@ import 'package:flutter_projects/screens/history_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/screens/home_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
-import '../widgets/favorite-product.dart';
 import '../widgets/store.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -42,7 +41,7 @@ class StoreScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stores'),
+        title: Text('Stores Screen'),
       ),
       body: Column(
         children: [
