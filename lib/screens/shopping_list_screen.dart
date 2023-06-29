@@ -80,6 +80,45 @@ class ShoppingList extends StatelessWidget {
               },
             ),
           ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Padding(
+                padding: const EdgeInsets.only(right: 30.0),
+                child: Column (
+                  children: [
+                    Text(
+                      'Subtotal    520 Bs',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text(
+                      'Yapita             0 Bs',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    SizedBox(height: 5.0),
+                    Container(
+                      width: 180,
+                      height: 2, // Adjust line thickness
+                      color: Colors.grey, // Customize color
+                    ),
+                    SizedBox(height: 5.0),
+                    Text(
+                      'Total           520 Bs',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black87,
+                      ),
+                    ),
+                  ],
+                )
+            ),
+          ),
+          SizedBox(height: 20.0),
           BuyButton(
               text: "Continuar con la compra",
               onPressed: () {

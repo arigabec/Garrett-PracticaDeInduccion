@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screens/confirmation_screen.dart';
 import 'package:flutter_projects/widgets/buy_button.dart';
 import 'package:flutter_projects/widgets/pickup_option.dart';
 
@@ -29,7 +30,14 @@ class ReserveScreen extends StatelessWidget {
           SizedBox(height: 25.0),
           BuyButton(
               text: "Reservar prenda",
-              onPressed: () {}
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ConfirmationScreen(),
+                  ),
+                );
+              }
           ),
         ],
       )

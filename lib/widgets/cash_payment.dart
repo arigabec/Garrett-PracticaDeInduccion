@@ -24,10 +24,12 @@ class CashPayment extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Bs. ',
-                  suffixIcon: Icon(Icons.money),
+              Container(
+                width: 350,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Bs. ',
+                  ),
                 ),
               ),
             ]

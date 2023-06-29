@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screens/history_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/screens/home_screen.dart';
 import 'package:flutter_projects/screens/shopping_list_screen.dart';
@@ -103,7 +104,12 @@ class FavoriteScreen extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.history),
               onPressed: () {
-                // Perform search action
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HistoryScreen(),
+                  ),
+                );
               },
             ),
             IconButton(

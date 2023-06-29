@@ -31,6 +31,7 @@ class FavoriteProduct extends StatelessWidget {
                   width: 370,
                   height: 120,
                   child: Row (
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
                         width: 110,
@@ -81,11 +82,17 @@ class FavoriteProduct extends StatelessWidget {
                         ],
                       ),
                       SizedBox(width: 25.0),
-                      IconButton(
-                        icon: Icon(Icons.favorite),
-                        onPressed: () {
-                          // Delete button action
-                        },
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 5, top: 5),
+                          child: IconButton(
+                            icon: Icon(Icons.favorite),
+                            onPressed: () {
+                              // Delete button action
+                            },
+                          ),
+                        ),
                       ),
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screens/confirmation_screen.dart';
 import 'package:flutter_projects/widgets/card_payment.dart';
 import 'package:flutter_projects/widgets/cash_payment.dart';
 import '../widgets/buy_button.dart';
@@ -91,7 +92,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           BuyButton(
               text: "Finalizar la compra",
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ConfirmationScreen(),
+                  ),
+                );
               },
           ),
         ],

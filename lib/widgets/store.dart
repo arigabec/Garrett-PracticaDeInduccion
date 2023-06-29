@@ -28,6 +28,7 @@ class Store extends StatelessWidget {
                   width: 370,
                   height: 110,
                   child: Row (
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(width: 15.0),
                       Container(
@@ -62,17 +63,23 @@ class Store extends StatelessWidget {
                         ],
                       ),
                       SizedBox(width: 30.0),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.7),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.arrow_right_sharp ,
-                            size: 30,
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.7),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.arrow_right_sharp ,
+                                size: 30,
+                              ),
+                            ),
                           ),
                         ),
                       ),

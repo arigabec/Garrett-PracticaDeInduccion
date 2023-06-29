@@ -42,44 +42,39 @@ class Product extends StatelessWidget {
     return GestureDetector(
         onTap: () => _handleContainerPressed(context),
         child: Container(
-          width: 170.0,
+          width: 170,
           height: height,
           child: Card(
             elevation: 2.0,
             color: color,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 125,
-                  height: 125,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      image,
-                      fit: BoxFit.cover,
+                Align(
+                    alignment: Alignment.topRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 5, top: 5),
+                      child: Icon(Icons.favorite_outline, size: 20),
                     ),
+                ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  child: Image.asset(image),
+                ),
+                Text(
+                  name,
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        name,
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8.0),
-                      Text(
-                        price,
-                        style: TextStyle(
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                SizedBox(height: 8.0),
+                Text(
+                  price,
+                  style: TextStyle(
+                    fontSize: 13.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),

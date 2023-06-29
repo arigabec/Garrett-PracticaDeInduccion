@@ -63,7 +63,7 @@ class CardPayment extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 15.0),
+            SizedBox(height: 20.0),
             SizedBox(
               width: 130,
               height: 40,
@@ -131,6 +131,7 @@ class CardPayment extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            SizedBox(height: 8.0),
                             Text(
                               'Número de tarjeta: $cardNumber',
                               style: TextStyle(color: Colors.white),
