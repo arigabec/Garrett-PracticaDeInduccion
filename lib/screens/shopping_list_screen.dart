@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/screens/checkout_screen.dart';
+import 'package:flutter_projects/screens/delivery_screen.dart';
 import 'package:flutter_projects/screens/setting_screen.dart';
 import 'package:flutter_projects/widgets/buy_button.dart';
 import 'package:flutter_projects/widgets/shopping_product.dart';
@@ -85,7 +86,7 @@ class ShoppingList extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CheckoutScreen(),
+                    builder: (context) => DeliveryScreen(),
                   ),
                 );
               },

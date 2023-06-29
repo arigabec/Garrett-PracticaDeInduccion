@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screens/checkout_screen.dart';
 import 'package:flutter_projects/widgets/card_payment.dart';
 import 'package:flutter_projects/widgets/cash_payment.dart';
+import 'package:flutter_projects/widgets/delivery_option.dart';
+import 'package:flutter_projects/widgets/pickup_option.dart';
 import '../widgets/buy_button.dart';
 import '../widgets/payment_option.dart';
 import '../widgets/qr_payment.dart';
 
-class CheckoutScreen extends StatefulWidget {
+class DeliveryScreen extends StatefulWidget {
   @override
-  _CheckoutScreenState createState() => _CheckoutScreenState();
+  _DeliveryScreenState createState() => _DeliveryScreenState();
 }
 
-class _CheckoutScreenState extends State<CheckoutScreen> {
+class _DeliveryScreenState extends State<DeliveryScreen> {
   String selectedOption = '';
 
   void selectOption(String option) {
@@ -23,7 +26,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout Screen'),
+        title: Text('Delivery Screen'),
       ),
       body: Column(
         children: [
@@ -31,9 +34,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 30.0),
+              padding: const EdgeInsets.only(left: 16.0),
               child: Text(
-                'Seleccionar un método de pago:',
+                'Seleccionar tipo de envío:',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: 16,
@@ -50,38 +53,26 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 PaymentOptionButton(
-                  option: 'Tarjeta',
-                  icon: Icons.credit_card,
-                  isSelected: selectedOption == 'Card',
-                  onPressed: () => selectOption('Card'),
+                  option: 'Delivery',
+                  icon: Icons.delivery_dining_outlined ,
+                  isSelected: selectedOption == 'Delivery',
+                  onPressed: () => selectOption('Delivery'),
                 ),
                 PaymentOptionButton(
-                  option: 'Pago con QR',
-                  icon: Icons.qr_code,
-                  isSelected: selectedOption == 'QR',
-                  onPressed: () => selectOption('QR'),
-                ),
-                PaymentOptionButton(
-                  option: 'Efectivo',
-                  icon: Icons.money,
-                  isSelected: selectedOption == 'Cash',
-                  onPressed: () => selectOption('Cash'),
+                  option: 'Pickup',
+                  icon: Icons.car_rental_outlined,
+                  isSelected: selectedOption == 'Pickup',
+                  onPressed: () => selectOption('Pickup'),
                 ),
               ],
             ),
           ),
           Builder(
             builder: (BuildContext context) {
-              if (selectedOption == 'Card') {
-                return CardPayment(
-                    cardNumber: "••• ••• ••• 123",
-                    cvc: "•••",
-                    expiryDate: "26/08/2028"
-                );
-              } else if (selectedOption == 'QR') {
-                return QRPayment();
-              } else if (selectedOption == 'Cash') {
-                return CashPayment();
+              if (selectedOption == 'Delivery') {
+                return DeliveryOption();
+              } else if (selectedOption == 'Pickup') {
+                return PickupOption();
               } else {
                 return Text('Ninguna opción está seleccionada');
               }
@@ -89,9 +80,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ),
           SizedBox(height: 15.0),
           BuyButton(
-              text: "Finalizar la compra",
+              text: "Continuar con el pago",
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CheckoutScreen(),
+                  ),
+                );
               },
           ),
         ],

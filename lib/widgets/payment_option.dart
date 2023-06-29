@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PaymentOptionButton extends StatelessWidget {
@@ -21,7 +22,7 @@ class PaymentOptionButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            primary: isSelected ? Colors.deepPurpleAccent.withOpacity(0.5) : Colors.grey,
+            primary: isSelected ? Colors.deepPurpleAccent.withOpacity(0.5) : Colors.grey.withOpacity(0.6),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
